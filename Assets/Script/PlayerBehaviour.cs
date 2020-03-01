@@ -31,7 +31,7 @@ public class PlayerBehaviour : MonoBehaviour
         Collider2D collider = Physics2D.OverlapBox(movement + (Vector2)transform.position, Vector2.one * 0.01f, 0.0f);
         BoxBehaviour box = collider?.GetComponent<BoxBehaviour>();
 
-        if (!collider || box)
+        if (!collider || box || collider?.gameObject.tag == "StockPlace")
         {
             bool canMove = true;
             if (box)
